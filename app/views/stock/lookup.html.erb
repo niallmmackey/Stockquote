@@ -1,0 +1,17 @@
+<h1>Stock Quote</h1>
+
+<%= form_tag({:controller => "stock", :action => "lookup"}, :method => "get") do %>
+  <%= label_tag(:StockSymbol, "Stock Symbol:") %>
+  <%= text_field_tag(:StockSymbol,@Stocks["Symbol"],:size => 4) %><span>format: 4 character stock symbol e.g. CSCO</span>
+  <br/>
+  <%= label_tag(:SMSnumber, "Send to Mobile:") %>
+  <%= text_field_tag(:SMSnumber,@Stocks["sms"]) %><span>format: +353871234567</span>
+  <br/>
+  <%= submit_tag("Look Up") %>
+<% end %>
+
+<br>
+
+<div class="stocktitle"><%= @Stocks["Name"] %> (<%= @Stocks["Symbol"] %>)</div>
+<div class="ask"><%= @Stocks["Ask"] %></div>
+<div class="<%= @Stocks["changecss"] %>"><%= @Stocks["Change"] %></div>
