@@ -12,6 +12,17 @@
 
 <br>
 
-<div class="stocktitle"><%= @Stocks["Name"] %> (<%= @Stocks["Symbol"] %>)</div>
-<div class="ask"><%= @Stocks["Ask"] %></div>
-<div class="<%= @Stocks["changecss"] %>"><%= @Stocks["Change"] %></div>
+<table border="1" cellspacing="10" cellpadding="3">
+
+<tr>
+	<td>Stock Name</td>
+	<td>Ask Price</td>
+	<td>Bid Price</td>
+</tr>
+<tr>
+	<td><%= @Stocks["Name"] %></td>
+	<td><%= @Stocks["Ask"] %></td>
+	<td><%= @Stocks["Bid"] %></td>
+</tr>
+</table>
+
