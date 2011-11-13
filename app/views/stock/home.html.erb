@@ -1,11 +1,34 @@
-<h1>Stock Quote</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Stock System - Home</title>
+<%= stylesheet_link_tag 'Stockcss'  %>
+<%= javascript_include_tag :defaults %>
+<%= csrf_meta_tag %>
+
+</head>
+
+<body>
+<img src="Stockmarket.jpg" alt="stock image" width=100% height="183" /><br />
+  <h1 align="center"><strong>Stock Market Search</strong></h1>
 
 <%= form_tag({:controller => "stock", :action => "lookup"}, :method => "get") do %>
-  <%= label_tag(:StockSymbol, "Stock Symbol:") %>
-  <%= text_field_tag(:StockSymbol,'',:size => 4) %><span>format: 4 character stock symbol e.g. CSCO</span>
-  <br/>
-  <%= label_tag(:SMSnumber, "Send to Mobile:") %>
-  <%= text_field_tag(:SMSnumber) %><span>format: +353871234567</span>
-  <br/>
-  <%= submit_tag("Look Up") %>
+
+<%= label_tag(:StockSymbol, "Please Enter Stock Symbol:") %>
+<%= text_field_tag(:StockSymbol,'',:size => 4) %><span>must be a maximum of 4 characters long</span>
+<br/>
+<%= label_tag(:SMSnumber, "Please Enter Mobile Phone Number To Send Result To :") %>
+<%= text_field_tag(:SMSnumber) %><span>(e.g. +353872530705</span>
+<br/>
+
+<p align="center">(leave mobile phone number blank if you don't need this functionality)</p>
+
+<%= submit_tag("Look Up") %>
+
 <% end %>
+
+<% yield %>
+
+</body>
+

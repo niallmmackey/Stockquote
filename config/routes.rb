@@ -1,12 +1,12 @@
 Stockquote::Application.routes.draw do
 
 root :to => "stock#home"
-  get "stock/home"
-  get "stock/lookup"
-  get "stock/sms"
+get "stock/home"
+get "stock/lookup"
+get "stock/sms"
 
-
-
+# match '/stock/home',:controller=>'stock',:action=>'home'
+# match '/stock/lookup',:controller=>'stock',:action=>'lookup'
 
 
   # The priority is based upon order of creation:
